@@ -18,7 +18,10 @@ function encodeLine(str) {
     if (str[i] === str[i + 1]) {
       sameCounter += 1;
     } else {
-      newLine += (sameCounter === 1 ? str[i] : sameCounter.toString + str[i]);
+      if (sameCounter !== 1) {
+        newLine += sameCounter.toString();
+      }
+      newLine += str[i];
       sameCounter = 1;
     }
   }
